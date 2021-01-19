@@ -1,21 +1,32 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
     "declaration": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
+    "downlevelIteration": true,
     "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "strict": true,
+    "target": "es2015",
     "types": ["node", "jest"],
+    "lib": ["es2018", "dom"],
     "paths": {
       "@/*": ["src/*"]
-    },
-    "outDir": "dist",
-    "declarationDir": "types"
+    }
+  },
+  "angularCompilerOptions": {
+    "enableResourceInlining": true,
+    "fullTemplateTypeCheck": true,
+    "skipTemplateCodegen": true,
+    "strictInjectionParameters": true,
+    "strictMetadataEmit": true,
+    "disableTypeScriptVersionCheck": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "src/**/__tests__/*"]

@@ -106,3 +106,4 @@ dist
 # Build artifacts
 /lib
 /types
+/dist

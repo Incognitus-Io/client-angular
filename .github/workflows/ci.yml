@@ -112,6 +112,7 @@ jobs:
         env:
           PKG_VERSION: ${{ steps.pkg-info.outputs.version }}
         run: |
+          cd dist
           yarn json -I -f package.json -e "this.version='${PKG_VERSION}'"
           yarn json -I -f package.json -e "this.scripts=undefined"
           yarn json -I -f package.json -e "this.devDependencies=undefined"
@@ -125,7 +126,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           PKG_VERSION: ${{ steps.pkg-info.outputs.version }}
-        run: yarn publish --access public --tag next --no-git-tag-version --new-version $PKG_VERSION
+        run: |
+          cd dist
+          yarn publish --access public --tag next --no-git-tag-version --new-version $PKG_VERSION
 
   deploy-latest:
     runs-on: ubuntu-18.04
@@ -167,6 +170,7 @@ jobs:
         env:
           PKG_VERSION: ${{ steps.pkg-info.outputs.version }}
         run: |
+          cd dist
           yarn json -I -f package.json -e "this.version='${PKG_VERSION}'"
           yarn json -I -f package.json -e "this.scripts=undefined"
           yarn json -I -f package.json -e "this.devDependencies=undefined"
@@ -179,4 +183,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           PKG_VERSION: ${{ steps.pkg-info.outputs.version }}
-        run: yarn publish --access public --no-git-tag-version --new-version $PKG_VERSION
+        run: |
+          cd dist
+          yarn publish --access public --no-git-tag-version --new-version $PKG_VERSION

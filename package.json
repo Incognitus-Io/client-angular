@@ -1,18 +1,18 @@
 {
-  "name": "template-project",
-  "description": "{{ Fill me in }}",
+  "name": "@incognitus/client-angular",
+  "description": "Incognitus angular client",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "author": "Incognitus <support@incognitus.io>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Incognitus-Io/{{repo}}.git"
+    "url": "git@github.com:Incognitus-Io/client-angular.git"
   },
   "bugs": {
-    "url": "https://github.com/Incognitus-IO/{{repo}}/issues"
+    "url": "https://github.com/Incognitus-IO/client-angular/issues"
   },
-  "homepage": "https://github.com/Incognitus-Io/{{repo}}#readme",
+  "homepage": "https://github.com/Incognitus-Io/client-angular#readme",
   "keywords": [
     "feature-flags",
     "feature-toggle",
@@ -21,39 +21,54 @@
     "flags",
     "incognitus"
   ],
-  "module": "lib/esm/index.min.js",
-  "main": "lib/cjs/index.min.js",
-  "types": "types/index.d.ts",
   "files": [
     "src",
-    "lib/*.js",
-    "lib/*.js.map",
-    "types/*.d.ts"
+    "dist/*.js",
+    "dist/*.js.map",
+    "dist/*.d.ts"
   ],
   "scripts": {
-    "prebuild": "rimraf lib && rimraf types",
-    "build": "rollup --config rollup.config.js",
+    "build": "ng build",
     "lint": "eslint ./src --ext .js,.ts",
     "test": "yarn test:ci --watch",
     "test:ci": "jest"
   },
   "dependencies": {},
+  "peerDependencies": {
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "tslib": "^1.10.0 || ^2.0.0"
+  },
   "devDependencies": {
-    "@rollup/plugin-eslint": "^8.0.1",
+    "@angular-devkit/build-angular": "~0.900.0",
+    "@angular-devkit/build-ng-packagr": "~0.900.7",
+    "@angular/animations": "~9.0.0",
+    "@angular/cli": "~9.0.0",
+    "@angular/common": "~9.0.0",
+    "@angular/compiler": "~9.0.0",
+    "@angular/compiler-cli": "~9.0.0",
+    "@angular/core": "~9.0.0",
+    "@angular/forms": "~9.0.0",
+    "@angular/language-service": "~9.0.0",
+    "@angular/platform-browser": "~9.0.0",
+    "@angular/platform-browser-dynamic": "~9.0.0",
+    "@angular/router": "~9.0.0",
     "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^7.0.0",
     "jest": "^26.6.3",
+    "jest-preset-angular": "^8.3.2",
     "json": "^10.0.0",
+    "ng-packagr": "^9.0.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.34.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.29.0",
+    "rxjs": "~6.5.4",
+    "service": "^0.1.4",
     "ts-jest": "^26.4.4",
-    "tslib": "^2.0.3",
-    "typescript": "^4.1.3"
+    "tslib": "^2.1.0",
+    "typescript": "~3.8.0",
+    "zone.js": "~0.10.2"
   }
 }
