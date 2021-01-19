@@ -10,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class IncognitusComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    /* nop */
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    /* nop */
+  }
 }
