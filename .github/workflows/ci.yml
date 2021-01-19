@@ -91,7 +91,7 @@ jobs:
 
       - run: yarn install --frozen-lockfile --production=false
       - name: Build library
-        run: yarn build
+        run: yarn build:ci
 
       - name: Generate version
         id: pkg-info
@@ -159,7 +159,7 @@ jobs:
 
       - run: yarn install --frozen-lockfile --production=false
       - name: Build library
-        run: yarn build
+        run: yarn build:ci
 
       - name: Generate version
         id: pkg-info

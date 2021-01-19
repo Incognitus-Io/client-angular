@@ -22,13 +22,14 @@
     "incognitus"
   ],
   "files": [
-    "src",
-    "dist/*.js",
-    "dist/*.js.map",
-    "dist/*.d.ts"
+    "*.js",
+    "*.js.map",
+    "*.d.ts",
+    "*.json"
   ],
   "scripts": {
     "build": "ng build",
+    "build:ci": "yarn build --prod",
     "lint": "eslint ./src --ext .js,.ts",
     "test": "yarn test:ci --watch",
     "test:ci": "jest"
