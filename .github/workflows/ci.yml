@@ -112,10 +112,9 @@ jobs:
         env:
           PKG_VERSION: ${{ steps.pkg-info.outputs.version }}
         run: |
-          cd dist
-          yarn json -I -f package.json -e "this.version='${PKG_VERSION}'"
-          yarn json -I -f package.json -e "this.scripts=undefined"
-          yarn json -I -f package.json -e "this.devDependencies=undefined"
+          yarn json -I -f dist/package.json -e "this.version='${PKG_VERSION}'"
+          yarn json -I -f dist/package.json -e "this.scripts=undefined"
+          yarn json -I -f dist/package.json -e "this.devDependencies=undefined"
 
       - name: Setup npmjs.com
         uses: actions/setup-node@v1
@@ -170,10 +169,9 @@ jobs:
         env:
           PKG_VERSION: ${{ steps.pkg-info.outputs.version }}
         run: |
-          cd dist
-          yarn json -I -f package.json -e "this.version='${PKG_VERSION}'"
-          yarn json -I -f package.json -e "this.scripts=undefined"
-          yarn json -I -f package.json -e "this.devDependencies=undefined"
+          yarn json -I -f dist/package.json -e "this.version='${PKG_VERSION}'"
+          yarn json -I -f dist/package.json -e "this.scripts=undefined"
+          yarn json -I -f dist/package.json -e "this.devDependencies=undefined"
 
       - uses: actions/setup-node@v1
         with:
